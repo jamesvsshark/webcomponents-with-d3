@@ -1,0 +1,19 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="hello-world">
+    <template>
+        <!--We can set the dom text here or in the call back below-->
+        <h1>Hello World!</h1>
+    </template>
+</dom-module>
+
+<script>
+    // register a new element called hello-world
+    Polymer({
+        is: "hello-world",
+        // add a callback to the element's prototype
+        ready: function() {
+            this.innerHTML = this.innerHTML +  "<h3>Extending HTML with Polymer Project</h3>"
+        }
+    });
+</script>

@@ -1,0 +1,38 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<script src="../bower_components/d3/d3.js"></script>
+<script src="../libs/radialProgress/radialProgress.js"></script>
+
+<dom-module id="simple-radial-chart">
+    <!--special css attribute to access styles in local dom-->
+    <style>
+        :host ::content  svg#chart div  {
+            width: 33%;
+            height: 200px;
+            box-sizing: border-box;
+            float: left;
+        }
+    </style>
+    <template>
+        <div id="chart"></div>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "simple-radial-chart",
+        properties: {
+            value: {
+                type: String,
+                notify: true
+            }
+        },
+        ready: function() {
+            var value = this.value;
+
+            radialProgress(this.$.chart)
+                    .diameter(150)
+                    .value(value)
+                    .render();
+        }
+    });
+</script>

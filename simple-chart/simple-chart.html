@@ -1,0 +1,41 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<script src="../bower_components/d3/d3.js"></script>
+
+<dom-module id="simple-chart">
+    <!--special css attribute to access styles in local dom-->
+    <style>
+        :host ::content  #chart div {
+            font: 10px sans-serif;
+            background-color: steelblue;
+            text-align: right;
+            padding: 3px;
+            margin: 1px;
+            color: white;
+        }
+    </style>
+    <template>
+        <div id="chart"></div>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "simple-chart",
+        properties: {
+            data: {
+                type: Array,
+                notify: true
+            }
+        },
+        ready: function(){
+            var data = this.data;
+
+            d3.select(this.$.chart)
+                    .selectAll("div")
+                    .data(data)
+                    .enter().append("div")
+                    .style("width", function(d) { return d * 10 + "px"; })
+                    .text(function(d) { return d; });
+        }
+    });
+</script>
