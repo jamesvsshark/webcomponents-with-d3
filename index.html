@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Web Components using Polymer & D3</title>
+    <title>Web Components using Polymer &amp; D3</title>
 
     <!--Styles applied to the true exposing dom-->
     <style>
@@ -21,32 +21,31 @@
 
     <!--Custom web components-->
     <link rel="import" href="hello-world/hello-world-element.html">
-    <link rel="import" href="webcomponent-examples/webcomponent-examples.html">
     <link rel="import" href="simple-chart/simple-chart.html">
     <link rel="import" href="svg-chart/svg-chart.html">
     <link rel="import" href="simple-radial-chart/simple-radial-chart.html">
     <link rel="import" href="simple-area-chart/simple-area-chart.html">
+    <link rel="import" href="simple-donut-chart/simple-donut-chart.html">
 </head>
 <body>
 
 <hello-world></hello-world>
 <hr />
 
-<webcomponent-examples>
+<h4>Simple bar chart</h4>
+<simple-chart data="[4, 8, 15, 16, 23, 42]"></simple-chart>
 
-    <h4>Simple bar chart</h4>
-    <simple-chart data="[4, 8, 15, 16, 23, 42]"></simple-chart>
+<h4>SVG chart</h4>
+<svg-chart data="[12, 18, 20, 21, 27, 50]"></svg-chart>
 
-    <h4>SVG chart</h4>
-    <svg-chart data="[12, 18, 20, 21, 27, 50]"></svg-chart>
+<h4>Simple radial chart</h4>
+<simple-radial-chart value="78"></simple-radial-chart>
 
-    <h4>Simple radial chart</h4>
-    <simple-radial-chart value="78"></simple-radial-chart>
+<h4>Simple area chart</h4>
+<simple-area-chart></simple-area-chart>
 
-    <h4>Simple area chart</h4>
-    <simple-area-chart></simple-area-chart>
-
-</webcomponent-examples>
+<h4>Simple donut chart</h4>
+<simple-donut-chart></simple-donut-chart>
 
 </body>
 </html>
